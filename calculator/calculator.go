@@ -16,7 +16,7 @@ func (c *Calculator) Multiply(a, b int) int {
 	return a * b
 }
 
-func (c *Calculator) Divide(a, b int) (int, error) {
+func (c *Calculator) Divide(a, b float64) (float64, error) {
 	if b == 0 {
 		return 0, errors.New("cannot divide by zero")
 	}
