@@ -9,11 +9,12 @@ import (
 func TestSum(t *testing.T) {
 	cal := calculator.Calculator{}
 
+	// data is a slice with info to execute each subtest
 	data := []struct {
-		name string
-		a    int
-		b    int
-		want int
+		name string //Subtest's name
+		a    int    //A value
+		b    int    //B Value
+		want int    //Value that is expected to get
 	}{
 		{"1", 2, 3, 5},
 		{"2", -7, 10, 3},
@@ -40,11 +41,12 @@ func TestSum(t *testing.T) {
 func TestSubtract(t *testing.T) {
 	cal := calculator.Calculator{}
 
+	// data is a slice with info to execute each subtest
 	data := []struct {
-		name string
-		a    int
-		b    int
-		want int
+		name string //Subtest's name
+		a    int    //A value
+		b    int    //B Value
+		want int    //Value that is expected to get
 	}{
 		{"1", 5, 10, -5},
 		{"2", -7, 10, -17},
@@ -71,11 +73,12 @@ func TestSubtract(t *testing.T) {
 func TestMultiply(t *testing.T) {
 	cal := calculator.Calculator{}
 
+	// data is a slice with info to execute each subtest
 	data := []struct {
-		name string
-		a    int
-		b    int
-		want int
+		name string //Subtest's name
+		a    int    //A value
+		b    int    //B Value
+		want int    //Value that is expected to get
 	}{
 		{"1", 10, 10, 100},
 		{"2", -15, -15, 225},
@@ -102,11 +105,12 @@ func TestMultiply(t *testing.T) {
 func TestDivide(t *testing.T) {
 	cal := calculator.Calculator{}
 
+	// data is a slice with info to execute each subtest
 	data := []struct {
-		name string
-		a    float64
-		b    float64
-		want float64
+		name string  //Subtest's name
+		a    float64 //A value
+		b    float64 //B Value
+		want float64 //Value that is expected to get
 	}{
 		{"1", 1, 0, 0},
 		{"2", -15, -15, 1},
@@ -125,7 +129,7 @@ func TestDivide(t *testing.T) {
 			got, err := cal.Divide(v.a, v.b)
 
 			if v.b == 0 {
-				if err == nil {
+				if err == nil { // If divisor value is 0, evaluate if Divide returned an error
 					t.Errorf("Error: expected an error when divisor is 0")
 				}
 				return
